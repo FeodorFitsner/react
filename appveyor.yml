@@ -12,6 +12,8 @@ environment:
 # Finish on first failed build
 matrix:
   fast_finish: true
+  
+clone_folder: D:\sources
 
 platform:
   - x64
