@@ -15,6 +15,20 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
-- script: |
-    yarn install --frozen-lockfile
-  displayName: 'yarn install and build'
+- script: node --version
+  displayName: 'test node version'
+
+- script: yarn install --frozen-lockfile
+  displayName: 'yarn install'
+
+- script: yarn lint
+  displayName: 'yarn lint'
+  
+- script: yarn build
+  displayName: 'yarn build'
+  
+- script: yarn test
+  displayName: 'yarn test'
+
+- script: yarn prettier
+  displayName: 'yarn prettier'
