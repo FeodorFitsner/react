@@ -9,8 +9,6 @@ environment:
   matrix:
     - nodejs_version: 10
 
-clone_folder: D:\sources
-
 # Finish on first failed build
 matrix:
   fast_finish: true
