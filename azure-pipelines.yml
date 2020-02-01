@@ -14,7 +14,12 @@ steps:
 - powershell: (Get-WmiObject Win32_Processor).VirtualizationFirmwareEnabled[0]
 - powershell: (Get-WmiObject Win32_Processor).SecondLevelAddressTranslationExtensions[0]
 - script: docker images
-- script: docker run --rm busybox echo hello_world
+- powershell: |
+    $destPath = "$(pwd)\diskspd"
+    $zipPath = "$env:TEMP\DiskSpd-2.0.21a.zip"
+    (New-Object Net.WebClient).DownloadFile('https://gallery.technet.microsoft.com/DiskSpd-A-Robust-Storage-6ef84e62/file/199535/2/DiskSpd-2.0.21a.zip', $zipPath)
+    7z x $zipPath -aoa -o"$destPath"
+    dir
 
 - task: NodeTool@0
   inputs:
