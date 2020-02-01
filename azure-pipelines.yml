@@ -20,6 +20,8 @@ steps:
     (New-Object Net.WebClient).DownloadFile('https://gallery.technet.microsoft.com/DiskSpd-A-Robust-Storage-6ef84e62/file/199535/2/DiskSpd-2.0.21a.zip', $zipPath)
     7z x $zipPath -aoa -o"$destPath"
     dir
+    & .\diskspd\amd64\diskspd -c1G -d60 -r -w40 -t2 -o32 -b64K -Sh -L C:\testfile1.dat
+    & .\diskspd\amd64\diskspd -c1G -d60 -r -w40 -t2 -o32 -b64K -Sh -L D:\testfile1.dat
 
 - task: NodeTool@0
   inputs:
