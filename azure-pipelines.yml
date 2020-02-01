@@ -13,6 +13,8 @@ steps:
 
 - powershell: (Get-WmiObject Win32_Processor).VirtualizationFirmwareEnabled[0]
 - powershell: (Get-WmiObject Win32_Processor).SecondLevelAddressTranslationExtensions[0]
+- script: docker images
+- script: docker run --rm busybox echo hello_world
 
 - task: NodeTool@0
   inputs:
