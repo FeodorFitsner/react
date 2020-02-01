@@ -10,6 +10,10 @@ pool:
   vmImage: 'windows-latest'
 
 steps:
+
+- powershell: (Get-WmiObject Win32_Processor).VirtualizationFirmwareEnabled[0]
+- powershell: (Get-WmiObject Win32_Processor).SecondLevelAddressTranslationExtensions[0]
+
 - task: NodeTool@0
   inputs:
     versionSpec: '10.x'
