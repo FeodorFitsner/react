@@ -13,7 +13,7 @@ environment:
 matrix:
   fast_finish: true
   
-clone_folder: D:\sources
+#clone_folder: D:\sources
 
 platform:
   - x64
